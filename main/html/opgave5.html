@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/main/stylesheet/style.css">
+    <link rel="stylesheet" href="/main/stylesheet/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div id="nav">
+        <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
+        <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
+        <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
+        <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
+        <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
+    </div>
+
+    <h1>Click The Headers To Sort!</h1>
+
+    <table class="table" id="table">
+        <thead>
+            <tr>
+                <th onclick="loadCarsSortById()">ID</th>
+                <th onclick="loadCarsSortByYear()">Year</th>
+                <th onclick="loadCarsSortByMake()">Make</th>
+                <th onclick="loadCarsSortByModel()">Model</th>
+                <th onclick="loadCarsSortByPrice()">Price</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+
+    <br>
+    <button class="btn btn-primary" onclick="filterCarsByMaxPrice()">Filter by Max Price</button>
+    <input type="number" id="maxPriceInput" placeholder="Enter max price" style="border-radius: 10px;">
+
+    <script src="/main/js/opgave5.js"></script>
+
+    <script src="/main/js/bootstrap.bundle.min.js.js"></script>
+
+</body>
+</html>

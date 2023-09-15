@@ -1,0 +1,61 @@
+a {
+  background: black;
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+}
+#nav {
+  display: flex;
+  justify-content: space-evenly;
+  background: rgb(227, 231, 233);
+}
+.coloredDiv {
+  border: 1px solid black;
+  width: 100%;
+  margin: 1px;
+  height: 10vw;
+}
+
+.my-div {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  margin: 1px;
+}
+.my-div {
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  margin: 1px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#bubble div {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+th {
+  cursor: pointer;
+}
+
+#car-selector-div {
+  margin-top: 12px;
+  margin-left: 12px;
+}
+#randomColorBtnOuterDiv button {
+  width: 25vw;
+  font-size: 30px;
+}
+#randomColorBtnOuterDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
