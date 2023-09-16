@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="/main/stylesheet/bootstrap.min.css">
 <body>
 
-    <div id="nav">
-        <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
-        <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
-        <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
-        <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
-        <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
-    </div>
+<div id="nav">
+    <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
+    <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
+    <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
+    <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
+    <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
+</div>
 
-    <div class="container" style="padding:1em;font-family: sans-serif">
+<div id="containerOpgave3">
+
+    <div class="container" id="innerContainerOpgave3">
 
         <button id="initialize-btn">Load Data</button>
         <ul id="ul1"></ul>
 
         <form>
-            <div><input id="name-input" placeholder="Enter new name here"></div>
+            <div><label for="name-input"></label><input id="name-input" placeholder="Enter new name here"></div>
             <div><span style="display: inline-block; width: 20em;margin-top: 10px;">Manipulate the individual DOM
                     elements </span>
                 <button id="btn-a1">Add Name</button>
@@ -38,9 +40,73 @@
         </form>
     </div>
 
-    <script src="/main/js/opgave3.js">
-    </script>
-    <script src="/main/js/bootstrap.bundle.min.js.js"></script>
+
+    <div id="forklaring-opgave-3" >
+
+        <h2>1. <code>event.preventDefault()</code></h2>
+        <p><code>event.preventDefault()</code> er en metode i JavaScript, der bruges til at forhindre den normale
+            handling, som
+            en metode udløser. I koden anvendes <code>event.preventDefault()</code> i flere af event
+            håndteringerne, såsom "btn-a1," "btn-a2," og "btn-a3." Formålet her er at forhindre standardadfærden af
+            formularindsendelse eller hyperlinknavigation, når knapperne klikkes. Dette er nyttigt, når man arbejder med
+            formularer eller links for at undgå at sende data eller navigere til en ny side, når man kun ønsker at
+            udføre en
+            brugerdefineret handling.</p>
+        <h2>2. Brug af <code>innerHTML</code>-feltet</h2>
+        <p><code>innerHTML</code>-feltet bruges til at ændre indholdet af et HTML-element ved at tilføje eller erstatte
+            HTML-kode. I koden anvendes det i <code>makeList</code>-funktionen til at generere en liste af navne som
+            <code>&lt;li&gt;</code>-elementer
+            og indsætte dem i <code>&lt;ul&gt;</code>-elementet med id "ul1." Det er vigtigt at være opmærksom på
+            følgende, når
+            man bruger <code>innerHTML</code>:</p>
+        <ul>
+            <li><strong>Sikkerhed:</strong> Det er nødvendigt at sørge for, at de data, der indsættes via <code>innerHTML</code>,
+                ikke indeholder potentielt farlig kode, der kan udløse Cross-Site Scripting (XSS) angreb. I koden er der
+                allerede en encode-funktion, der hjælper med at undgå dette problem ved at erstatte tegn som &lt;, &gt;,
+                &amp;,
+                og andre med deres HTML-entiteter.
+            </li>
+            <li><strong>Ydeevne:</strong> At bruge <code>innerHTML</code> til at ændre store mængder HTML kan have en
+                negativ
+                indvirkning på ydeevnen. Det kan føre til omfattende omskrivning og genindlæsning af DOM, hvilket kan
+                være
+                ineffektivt. I koden ser det ud til, at hele listen bliver erstattet hver gang med <code>makeList</code>.
+                Dette
+                kan være acceptabelt afhængigt af brugssituationen, men hvis man arbejder med store lister, kan det være
+                bedre
+                at opdatere specifikke elementer i stedet for hele listen.
+            </li>
+        </ul>
+        <h2>3. Ændring af DOM-listen</h2>
+        <p>Der er to forskellige strategier til at ændre DOM-listen af navne:</p>
+        <ul>
+            <li><strong>Strategi med manipulation af individuelle DOM-elementer (btn-a1, btn-a2, btn-a3):</strong> I
+                denne
+                strategi bruges <code>appendChild</code> og <code>remove</code> til at tilføje og fjerne <code>&lt;li&gt;</code>-elementer
+                i listen. Dette ændrer direkte DOM'en ved at tilføje eller fjerne elementer, og <code>names</code>-arrayet
+                bliver også opdateret for at afspejle ændringerne. Dette er en mere omkostningseffektiv tilgang, hvis
+                man kun
+                ændrer et enkelt element ad gangen.
+            </li>
+            <li><strong>Strategi med manipulation af data og genopbygning af HTML (btn-b1, btn-b2, btn-b3):</strong> I
+                denne
+                strategi ændres <code>names</code>-arrayet først, og derefter kaldes <code>makeList()</code> for at
+                genopbygge
+                hele <code>&lt;ul&gt;</code>-elementet med den opdaterede data. Dette er en mere omkostningstung
+                tilgang, især
+                hvis listen er stor, da hele listen genereres på ny for hver ændring.
+            </li>
+        </ul>
+        <p>Valget mellem disse to strategier afhænger af den specifikke brugssag og ydeevnekrav. Hvis man arbejder med
+            små
+            lister, kan strategien med manipulation af data og genopbygning af HTML være nemmere at implementere og
+            vedligeholde. Hvis man har store lister og skal ændre elementer hyppigt, kan strategien med manipulation af
+            individuelle DOM-elementer være mere effektiv.</p>
+    </div>
+</div>
+<script src="/main/js/opgave3.js">
+</script>
+<script src="/main/js/bootstrap.bundle.min.js.js"></script>
 
 
 </body>

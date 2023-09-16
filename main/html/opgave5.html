@@ -11,36 +11,65 @@
 
 <body>
 
-    <div id="nav">
-        <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
-        <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
-        <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
-        <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
-        <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
-    </div>
+<div id="nav">
+    <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
+    <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
+    <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
+    <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
+    <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
+</div>
 
-    <h1>Click The Headers To Sort!</h1>
+<h1>Click The Headers To Sort!</h1>
 
-    <table class="table" id="table">
-        <thead>
-            <tr>
-                <th onclick="loadCarsSortById()">ID</th>
-                <th onclick="loadCarsSortByYear()">Year</th>
-                <th onclick="loadCarsSortByMake()">Make</th>
-                <th onclick="loadCarsSortByModel()">Model</th>
-                <th onclick="loadCarsSortByPrice()">Price</th>
-            </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-    </table>
+<table class="table" id="table">
+    <thead>
+    <tr>
+        <th onclick="loadCarsSortById()">ID</th>
+        <th onclick="loadCarsSortByYear()">Year</th>
+        <th onclick="loadCarsSortByMake()">Make</th>
+        <th onclick="loadCarsSortByModel()">Model</th>
+        <th onclick="loadCarsSortByPrice()">Price</th>
+    </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+</table>
 
-    <br>
-    <button class="btn btn-primary" onclick="filterCarsByMaxPrice()">Filter by Max Price</button>
-    <input type="number" id="maxPriceInput" placeholder="Enter max price" style="border-radius: 10px;">
+<br>
+<button class="btn btn-primary" onclick="filterCarsByLowestPrice()">Filter Lowest Price</button>
+<label for="LowestPriceInput"></label><input type="number" id="LowestPriceInput" placeholder="Enter lowest price">
 
-    <script src="/main/js/opgave5.js"></script>
+<button class="btn btn-primary" onclick="filterCarsByHighestPrice()">Filter Highest Price</button>
+<label for="HighestPriceInput"></label><input type="number" id="HighestPriceInput" placeholder="Enter lowest price">
 
-    <script src="/main/js/bootstrap.bundle.min.js.js"></script>
+<button onclick="resetCarArray()" class="btn btn-primary">Reset filters</button>
+
+<script src="/main/js/opgave5.js"></script>
+
+<script src="/main/js/bootstrap.bundle.min.js.js"></script>
+
+<h4>
+    <b>Template String</b><br>Jeg har brugt template string i min loadCars() funktion.<br>
+    Det er virkelig smart måde at hurtigt lave sammensatte strings på, da man ikke behøver at skrive sådan "bla bla" +
+    variable + "bla bla" osv, så kan man bare skrive `blabla${variable}blabla`. Tilgengæld er det irreterende at det et
+    så småt ulæsligt tegn `<br>`<br>
+    <b>Map</b><br>
+    Jeg har brugt map i min loadCars() funktion. Jeg har brugt den til gå igennem cars arrayet, også lave html for hvert
+    row, også joine hvert row til en enkelt string jeg sætte til at være tbody, altså bliver det til alle min table rows
+
+    <br><b>Filter</b><br>
+    Jeg har brugt filter metoden i filterCarsByLowestPrice og filterCarsByHighestPrice. Der har jeg taget værdierne fra
+    html inputsne og sat som et maks/bund loft<br><br>
+
+
+    <b>Liste Opdatering</b><br>
+    Sådan får jeg den opdateret liste efter at filter/sort:<br>
+    Når jeg kører en filter/sort metode, opdatere jeg arrayet inde i javascript.<br>
+    Efter dette, kører jeg bare loadCars() metoden igen, da loadCars() simpelthen bare læser mit nuværende javascript
+    array og opdaterer alt dataen inde i html. Med denne tilgang er der ikke noget bliver indsat løbende, tværtimod
+    bliver alt slettet og sat ind på ny. Derfor skal jeg med denne tilgang kun bekymre mig om at opdatere arrayet inde i
+    javascript.
+</h4>
+
 
 </body>
 </html>

@@ -6,27 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/main/stylesheet/style.css">
-    <link rel="stylesheet" href="/main/stylesheet/bootstrap.min.css"></head>
+    <link rel="stylesheet" href="/main/stylesheet/bootstrap.min.css">
+</head>
 <body>
 
-    <div id="nav">
-        <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
-        <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
-        <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
-        <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
-        <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
-    </div>
-    <div id="car-selector-div">
-        <select id="car-selector">
-            <option>Select a car..</option>
-        </select>
-        <h2>Selected Brand</h2>
+<div id="nav">
+    <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
+    <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
+    <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
+    <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
+    <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
+</div>
+<div id="car-selector-div">
+    <label for="car-selector"></label><select id="car-selector">
+        <option>Select a car..</option>
+    </select>
+    <h2>Selected Brand</h2>
 
-        <h4 id="car-make"></h4>
-    </div>
-    </div>
-    <script src="/main/js/opgave4.js"></script>
-    <script src="/main/js/bootstrap.bundle.min.js.js"></script>
+    <h4 id="car-make"></h4>
+</div>
+<br>
+<h3>Jeg synes at det kan være passende at have en select-option når der er 3 eller flere valgmuligheder, da det
+    er en smart måde at kontrollere input på, på en nem og forstålig måde.
+    Hvis der kun er 2 muligheder, er 2 forskellige checkbox måske passende(fx vælg køn, så kan man checkbox enten mand
+    eller kvinde.
+    Jeg har løst opgaven ved at hente #car-selector, og appendeChild nogle options via forEach på arrayet over på #car-selector.
+    Efterfølgende henter jeg så den nuværende valgte option og giver dens value til #car-make
+</h3>
+
+<script src="/main/js/opgave4.js"></script>
+<script src="/main/js/bootstrap.bundle.min.js.js"></script>
 
 
 </body>

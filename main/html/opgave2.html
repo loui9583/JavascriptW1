@@ -11,37 +11,62 @@
 
 <body>
 
-    <div id="nav">
-        <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
-        <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
-        <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
-        <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
-        <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
-    </div>
+<div id="nav">
+    <a class="btn btn-info btn-lg" href="opgave1.html">Opgave 1</a>
+    <a class="btn btn-info btn-lg" href="opgave2.html">Opgave 2</a>
+    <a class="btn btn-info btn-lg" href="opgave3.html">Opgave 3</a>
+    <a class="btn btn-info btn-lg" href="opgave4.html">Opgave 4</a>
+    <a class="btn btn-info btn-lg" href="opgave5.html">Opgave 5</a>
+</div>
 
+<br>
+<div style="min-width: 800px; display: flex; justify-content: center">
+    <div style="border: 5px solid black; border-radius: 15px; min-width: 75vw;">
+        <br>
+        <h1 style="text-align: center" id="message">KLIK PÅ NOGET</h1>
 
-    <h1 id="message">CLICK SOMETHING</h1>
+        <div style="display: flex; justify-content: space-evenly; align-items: center">
 
-    <div onclick="messageDiv1()" class="my-div">
-    </div>
+            <div onclick="messageDiv1()" class="my-div">
+            </div>
 
-    <div onclick="messageDiv2()" class="my-div">
-    </div>
-    <br>
+            <div onclick="messageDiv2()" class="my-div">
+            </div>
+            <br>
 
-    
-    <div id="bubble">
-        <div style="width: 100px; height: 100px;" onclick="bubbleExample()">
-            <div style="width: 50px; height: 50px;">
-                <div style="width: 25px; height: 25px;">
-                    <div style="width: 12.5px; height: 12.5px;"></div>
+            <div id="bubble" onclick="bubbleExample()">
+                <div style="width: 200px; height: 200px;">
+                    <div style="width: 100px; height: 100px;">
+                        <div style="width: 50px; height: 50px;">
+                            <div style="width: 25px; height: 25px;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="/main/js/opgave2.js"></script>
-    <script src="/main/js/bootstrap.bundle.min.js.js"></script>
+        <br>
+        <br>
+    </div>
+</div>
+<br>
+
+<div style="display: flex; justify-content: center">
+    <h2 style="max-width: 70vw;">
+        "Bubbling" betyder, at alle underordnede elementer sender en begivenhed (f.eks. et klik) op til deres
+        overordnede
+        elementer. Dette betyder, at i vores eksempel med div'en med id "bubble", når du klikker på en af de indlejrede
+        div-elementer, bliver klikbegivenheden sendt op til den yderste div, som derefter udløser funktionen
+        "bubbleExample()". Faktisk fortsætter "bubbling" hele vejen op til det øverste html element, så hvis du har
+        en onclick-funktion på body-elementet, vil alle klik på hele siden faktisk udløse denne funktion, når de bobler
+        opad.
+    </h2>
+</div>
+
+
+<script src="/main/js/opgave2.js"></script>
+<script src="/main/js/bootstrap.bundle.min.js.js"></script>
+
 
 </body>
 

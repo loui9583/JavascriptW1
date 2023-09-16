@@ -1,61 +1,106 @@
 a {
-  background: black;
-  color: white;
-  padding: 8px;
-  border-radius: 10px;
-}
-#nav {
-  display: flex;
-  justify-content: space-evenly;
-  background: rgb(227, 231, 233);
-}
-.coloredDiv {
-  border: 1px solid black;
-  width: 100%;
-  margin: 1px;
-  height: 10vw;
+    background: black;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
 }
 
-.my-div {
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 25px;
-  background-color: red;
-  margin: 1px;
+#nav {
+    display: flex;
+    justify-content: space-evenly;
+    background: rgb(227, 231, 233);
 }
-.my-div {
-  width: 25px;
-  height: 25px;
-  background-color: red;
-  margin: 1px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.coloredDiv {
+    border: 1px solid black;
+    width: 100%;
+    margin: 1px;
+    height: 10vw;
 }
+
+#bubble div div div div {
+    background: #9ec5fe;
+}
+
+#bubble div div div {
+    background: red;
+}
+
+#bubble div div {
+    background: yellowgreen;
+}
+
 #bubble div {
-  border: 2px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background: darkslategrey;
 }
+
+
+.my-div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 1px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bubble div {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 th {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #car-selector-div {
-  margin-top: 12px;
-  margin-left: 12px;
+    margin-top: 12px;
+    margin-left: 12px;
 }
+
 #randomColorBtnOuterDiv button {
-  width: 25vw;
-  font-size: 30px;
+    width: 25vw;
+    font-size: 30px;
 }
+
 #randomColorBtnOuterDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#forklaring-opgave-3 {
+    padding: 1em;
+    margin-top: 3vh;
+    border: 5px solid black;
+    border-radius: 10px
+}
+
+#LowestPriceInput, #HighestPriceInput {
+    border-radius: 10px;
+}
+
+#containerOpgave3 {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5vw;
+    padding-right: 5vw
+}
+
+#innerContainerOpgave3 {
+    padding: 1em;
+    font-family: sans-serif;
+    margin-top: 3vh;
+    border: 5px solid black;
+    border-radius: 10px
+}
+
+#box-container {
+    min-width: 800px;
+    display: flex;
+    justify-content: center
 }
