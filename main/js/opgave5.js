@@ -132,6 +132,9 @@ function filterCarsByHighestPrice() {
     loadCars();
 }
 
-
+function resetAndLoadArray(){
+  resetCarArray();
+  loadCars();
+}
 
 loadCars();
